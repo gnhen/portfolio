@@ -643,3 +643,108 @@ body.resume-page {
   opacity: 0;
   animation: fadeIn 0.4s ease-in-out 0.4s forwards;
 }
+
+.logo-download {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.download-info {
+  text-align: center;
+}
+
+.download-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.download-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.download-actions {
+  margin: 30px 0;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.download-btn:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.download-details {
+  margin-top: 50px;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download-details h4 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.download-details ul {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+.download-details li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.download-details p {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .logo-download {
+    padding: 0 20px;
+  }
+  
+  .download-details {
+    text-align: center;
+  }
+  
+  .download-details ul {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-download {
+    padding: 0 15px;
+  }
+  
+  .download-btn {
+    width: 200px;
+    text-align: center;
+  }
+}
