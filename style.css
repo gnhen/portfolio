@@ -21,7 +21,8 @@ body.resume-page {
 
 body:not(.resume-page) .hero,
 body:not(.resume-page) .about {
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 body:not(.resume-page) .social-footer {
@@ -29,6 +30,7 @@ body:not(.resume-page) .social-footer {
   text-align: center;
   margin-top: auto;
   flex-shrink: 0;
+  position: relative;
 }
 
 body.resume-page .social-footer {
@@ -70,10 +72,12 @@ nav a:hover {
   justify-content: center;
   gap: 0px; 
   padding: 5px; 
-  min-height: 60vh; 
+  min-height: 40vh;
   text-align: center;
-  margin-top: 5pt;
+  margin-top: 20px; 
   background-color: white;
+  flex-grow: 0; 
+  flex-shrink: 0;
 }
 
 .hero-logo {
@@ -94,12 +98,6 @@ nav a:hover {
   max-width: 600px;
   font-size: 1.2rem;
   color: #333;
-}
-
-.here img {
-  width: 400px;
-  height: auto;
-  margin-bottom: 0px;
 }
 
 .about {
@@ -140,7 +138,7 @@ nav a:hover {
   display: inline-block;
 }
 
-social-icons a:hover {
+.social-icons a:hover {
   color: #333;
   transform: translateY(-2px);
 }
