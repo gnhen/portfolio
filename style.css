@@ -64,19 +64,42 @@ nav a:hover {
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px; 
+  padding: 5px; 
+  min-height: 60vh; 
   text-align: center;
-  margin-top: 100px;
+  margin-top: 5pt;
   background-color: white;
 }
 
+.hero-logo {
+  margin-bottom: 0;
+  width: 200px; 
+  height: auto;
+}
+
 .hero h2 {
+  margin: 0; 
+  margin-bottom: 5px;
   font-size: 3rem;
-  margin-bottom: 10px;
 }
 
 .hero p {
+  margin: 0; 
+  text-align: center;
+  max-width: 600px;
   font-size: 1.2rem;
   color: #333;
+}
+
+.here img {
+  width: 400px;
+  height: auto;
+  margin-bottom: 0px;
 }
 
 .about {
