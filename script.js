@@ -47,3 +47,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Word Rotator
+document.addEventListener('DOMContentLoaded', function() {
+    const words = document.querySelectorAll('.rotator-word');
+    if (words.length === 0) return;
+
+    let currentIndex = 0;
+    
+    setInterval(() => {
+        const currentWord = words[currentIndex];
+        const nextIndex = (currentIndex + 1) % words.length;
+        const nextWord = words[nextIndex];
+
+        // Animate out current
+        currentWord.classList.remove('active');
+        currentWord.classList.add('exit');
+
+        // Prepare next word to enter from bottom
+        nextWord.style.transition = 'none';
+        nextWord.classList.remove('exit');
+        nextWord.classList.remove('active');
+        
+        // Force reflow to apply the instant position change
+        void nextWord.offsetWidth;
+        
+        // Restore transition and animate in
+        nextWord.style.transition = '';
+        nextWord.classList.add('active');
+
+        currentIndex = nextIndex;
+    }, 2400);
+});
