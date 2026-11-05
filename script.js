@@ -95,23 +95,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let currentIndex = 0;
 
-  setInterval(() => {
+  words.forEach((word, index) => {
+    word.classList.toggle('active', index === 0);
+    if (index !== 0) word.style.display = 'none';
+  });
+
+  const morphTo = (nextIndex) => {
     const currentWord = words[currentIndex];
-    const nextIndex = (currentIndex + 1) % words.length;
     const nextWord = words[nextIndex];
+    const from = currentWord.textContent;
+    const to = nextWord.textContent;
+    const steps = Math.max(from.length, to.length);
+    let step = 0;
 
     currentWord.classList.remove('active');
-    currentWord.classList.add('exit');
-
-    nextWord.style.transition = 'none';
-    nextWord.classList.remove('exit');
-    nextWord.classList.remove('active');
-
-    void nextWord.offsetWidth;
-
-    nextWord.style.transition = '';
+    currentWord.style.display = 'none';
+    nextWord.style.display = 'inline';
     nextWord.classList.add('active');
-
     currentIndex = nextIndex;
+
+    const update = () => {
+      const prefix = to.slice(0, step);
+      const suffix = from.slice(step);
+      nextWord.textContent = prefix + suffix;
+      step += 1;
+
+      if (step <= steps) {
+        window.setTimeout(update, 80);
+      } else {
+        nextWord.textContent = to;
+      }
+    };
+
+    update();
+  };
+
+  setInterval(() => {
+    morphTo((currentIndex + 1) % words.length);
   }, 2400);
 });
